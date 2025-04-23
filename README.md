@@ -31,14 +31,14 @@ Esta é a documentação oficial da API RESTful para o sistema de criação e ge
 | POST   | /decks                         | Criar um novo deck                     | 201, 400, 500      |
 | POST   | /decks/{id}/cards              | Adicionar carta a um deck              | 201, 400, 404, 500 |
 | POST   | /usuarios                      | Criar um novo usuário                  | 201, 400, 500      |
-| DELETE | /cards/{id}                    | Excluir carta                          | 204, 404, 500      |
-| DELETE | /decks/{id}                    | Excluir deck                           | 204, 404, 500      |
-| DELETE | /decks/{deckId}/cards/{cardId} | Remover carta de um deck               | 204, 404, 500      |
-| DELETE | /usuarios/{id}                 | Excluir conta de usuário               | 204, 404, 500      |
 | PUT    | /cards/{id}                    | Atualizar carta existente              | 200, 400, 404, 500 |
 | PUT    | /decks/{id}                    | Atualizar deck existente               | 200, 400, 404, 500 |
 | PUT    | /decks/{deckId}/cards/{cardId} | Atualizar quantidade ou dados da carta | 200, 400, 404, 500 |
 | PUT    | /usuarios/{id}                 | Atualizar dados do usuário             | 200, 400, 404, 500 |
+| DELETE | /cards/{id}                    | Excluir carta                          | 204, 404, 500      |
+| DELETE | /decks/{id}                    | Excluir deck                           | 204, 404, 500      |
+| DELETE | /decks/{deckId}/cards/{cardId} | Remover carta de um deck               | 204, 404, 500      |
+| DELETE | /usuarios/{id}                 | Excluir conta de usuário               | 204, 404, 500      |
 
 ---
 
