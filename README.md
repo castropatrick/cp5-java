@@ -1,6 +1,6 @@
 # CP5-Java 
 
-## 📚 Sumário
+##  Sumario
 
 1. [Introdução](#1-introdução)  
 2. [Rotas da API](#2-rotas-da-api)  
