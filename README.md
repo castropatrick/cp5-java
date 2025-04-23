@@ -1,13 +1,11 @@
+# CP5-Java 
 
-# CP5-Java
-Patrick Castro Quintana - RM559271 1TDSPB
 ## 📚 Sumário
 
 1. [Introdução](#1-introdução)  
 2. [Rotas da API](#2-rotas-da-api)  
 3. [DTOs e Modelos de Dados](#3-dtos-e-modelos-de-dados)  
 4. [Especificação OpenAPI](#4-especificação-openapi)  
-5. [Critérios de Avaliação](#5-critérios-de-avaliação)
 
 ---
 
@@ -31,4 +29,37 @@ Esta é a documentação oficial da API RESTful para o sistema de criação e ge
 | PUT    | /decks/{deckId}/cards/{cardId} | Atualizar quantidade ou dados da carta | 200, 400, 404, 500 |
 | DELETE | /decks/{deckId}/cards/{cardId} | Remover carta de um deck               | 204, 404, 500      |
 | GET    | /cards                         | Listar todas as cartas cadastradas     | 200, 500           |
-| GET    | /cards/{id}
+| GET    | /cards/{id}                    | Buscar carta por ID                    | 200, 404, 500      |
+| POST   | /cards                         | Cadastrar nova carta                   | 201, 400, 500      |
+| PUT    | /cards/{id}                    | Atualizar carta existente              | 200, 400, 404, 500 |
+| DELETE | /cards/{id}                    | Excluir carta                          | 204, 404, 500      |
+| GET    | /usuarios                      | Listar todos os usuários               | 200, 500           |
+| GET    | /usuarios/{id}                 | Obter detalhes de um usuário           | 200, 404, 500      |
+| POST   | /usuarios                      | Criar um novo usuário                  | 201, 400, 500      |
+| PUT    | /usuarios/{id}                 | Atualizar dados do usuário             | 200, 400, 404, 500 |
+| DELETE | /usuarios/{id}                 | Excluir conta de usuário               | 204, 404, 500      |
+| GET    | /decks/{id}/exportar           | Exportar deck em JSON ou texto         | 200, 404, 500      |
+
+---
+
+## 3. DTOs e Modelos de Dados
+
+### 🔹 DeckDTO
+```json
+{
+  "id": 1,
+  "nome": "Rakdos Sacrifice",
+  "formato": "Pioneer",
+  "descricao": "Deck baseado em sacrifício de criaturas",
+  "cartas": [
+    {
+      "id": 101,
+      "nome": "Mayhem Devil",
+      "tipo": "Creature",
+      "cor": "Red/Black",
+      "custoMana": "1BR",
+      "quantidade": 4
+    }
+  ],
+  "dataCriacao": "2024-03-15T13:45:00Z"
+}
