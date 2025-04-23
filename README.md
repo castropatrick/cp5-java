@@ -15,7 +15,7 @@ Esta é a documentação oficial da API RESTful para o sistema de criação e ge
 
 ---
 
-## 2. Rotas da API
+##🛣️ 2. Rotas da API
 
 | Método | Rota                           | Descrição                              | Status Codes       |
 | ------ | ------------------------------ | -------------------------------------- | ------------------ |
