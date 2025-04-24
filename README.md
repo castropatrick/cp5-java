@@ -15,32 +15,32 @@ Esta é a documentação oficial da API RESTful para o sistema de criação e ge
 
 ---
 
-##🛣️ 2. Rotas da API
+## 🛣️ 2. Rotas da API
 
-| Método | Rota                           | Descrição                              | Status Codes       |
-| ------ | ------------------------------ | -------------------------------------- | ------------------ |
-| GET    | /cards                         | Listar todas as cartas cadastradas     | 200, 500           |
-| GET    | /cards/{id}                    | Buscar carta por ID                    | 200, 404, 500      |
-| GET    | /decks                         | Listar todos os decks do usuário       | 200, 500           |
-| GET    | /decks/{id}                    | Buscar deck por ID                     | 200, 404, 500      |
-| GET    | /decks/{id}/cards              | Listar cartas de um deck               | 200, 404, 500      |
-| GET    | /decks/{id}/exportar           | Exportar deck em formato JSON ou texto | 200, 404, 500      |
-| GET    | /usuarios                      | Listar todos os usuários               | 200, 500           |
-| GET    | /usuarios/{id}                 | Obter detalhes de um usuário           | 200, 404, 500      |
-| POST   | /cards                         | Cadastrar nova carta                   | 201, 400, 500      |
-| POST   | /decks                         | Criar um novo deck                     | 201, 400, 500      |
-| POST   | /decks/{id}/cards              | Adicionar carta a um deck              | 201, 400, 404, 500 |
-| POST   | /usuarios                      | Criar um novo usuário                  | 201, 400, 500      |
-| PUT    | /cards/{id}                    | Atualizar carta existente              | 200, 400, 404, 500 |
-| PUT    | /decks/{id}                    | Atualizar deck existente               | 200, 400, 404, 500 |
-| PUT    | /decks/{deckId}/cards/{cardId} | Atualizar quantidade ou dados da carta | 200, 400, 404, 500 |
-| PUT    | /usuarios/{id}                 | Atualizar dados do usuário             | 200, 400, 404, 500 |
-| DELETE | /cards/{id}                    | Excluir carta                          | 204, 404, 500      |
-| DELETE | /decks/{id}                    | Excluir deck                           | 204, 404, 500      |
-| DELETE | /decks/{deckId}/cards/{cardId} | Remover carta de um deck               | 204, 404, 500      |
-| DELETE | /usuarios/{id}                 | Excluir conta de usuário               | 204, 404, 500      |
 
----
+| Método | Rota                     | Descrição                       | Status Codes         |
+|--------|--------------------------|---------------------------------|----------------------|
+| GET    | /decks                   | Listar todos os decks           | 200, 500             |
+| GET    | /decks/{id}              | Buscar deck por ID              | 200, 404, 500        |
+| GET    | /users                   | Listar todos os usuários        | 200, 500             |
+| GET    | /users/{id}              | Obter dados de um usuário       | 200, 404, 500        |
+| GET    | /cards                   | Listar todas as cartas          | 200, 500             |
+| GET    | /cards/{id}              | Obter detalhes de uma carta     | 200, 404, 500        |
+| GET    | /collections             | Listar coleções de decks        | 200, 500             |
+| GET    | /decks/search?query=...  | Buscar decks por nome/descrição| 200, 400, 500        |
+| POST   | /decks                   | Criar novo deck                 | 201, 400, 500        |
+| POST   | /users                   | Criar novo usuário              | 201, 400, 500        |
+| POST   | /cards                   | Adicionar nova carta            | 201, 400, 500        |
+| POST   | /collections             | Criar nova coleção              | 201, 400, 500        |
+| POST   | /decks/{id}/cards        | Adicionar carta a um deck       | 200, 400, 404, 500   |
+| PUT    | /decks/{id}              | Atualizar deck existente        | 200, 400, 404, 500   |
+| PUT    | /users/{id}              | Atualizar usuário               | 200, 400, 404, 500   |
+| PUT    | /cards/{id}              | Atualizar carta                 | 200, 400, 404, 500   |
+| DELETE | /decks/{id}              | Excluir deck existente          | 204, 404, 500        |
+| DELETE | /users/{id}              | Deletar usuário                 | 204, 404, 500        |
+| DELETE | /cards/{id}              | Excluir uma carta               | 204, 404, 500        |
+| DELETE | /decks/{id}/cards/{cardId}| Remover carta de um deck      | 204, 404, 500        |
+
 
 
 ---
@@ -50,19 +50,43 @@ Esta é a documentação oficial da API RESTful para o sistema de criação e ge
 ### 🔹 DeckDTO
 ```json
 {
-  "id": 1,
-  "nome": "Rakdos Sacrifice",
-  "formato": "Pioneer",
-  "descricao": "Deck baseado em sacrifício de criaturas",
+  "id": "PQPz_KSrV0S5_Huk1zh_tg",
+  "nome": "Selvala Brostorm",
+  "formato": "Commander",
+  "descricao": "Deck mono-verde competitivo focado em combos de mana infinita com Selvala, Heart of the Wilds.",
   "cartas": [
     {
-      "id": 101,
-      "nome": "Mayhem Devil",
-      "tipo": "Creature",
-      "cor": "Red/Black",
-      "custoMana": "1BR",
-      "quantidade": 4
+      "id": 1,
+      "nome": "Selvala, Heart of the Wilds",
+      "tipo": "Criatura Lendária",
+      "cor": "Verde",
+      "custoMana": "1GG",
+      "quantidade": 1
+    },
+    {
+      "id": 2,
+      "nome": "Phyrexian Dreadnought",
+      "tipo": "Artefato Criatura",
+      "cor": "Incolor",
+      "custoMana": "1",
+      "quantidade": 1
+    },
+    {
+      "id": 3,
+      "nome": "Umbral Mantle",
+      "tipo": "Artefato",
+      "cor": "Incolor",
+      "custoMana": "3",
+      "quantidade": 1
+    },
+    {
+      "id": 4,
+      "nome": "Staff of Domination",
+      "tipo": "Artefato",
+      "cor": "Incolor",
+      "custoMana": "3",
+      "quantidade": 1
     }
   ],
-  "dataCriacao": "2024-03-15T13:45:00Z"
+  "dataCriacao": "2020-06-21T13:45:00Z"
 }
