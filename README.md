@@ -116,4 +116,4 @@ Esta é a documentação oficial da API RESTful para o sistema de criação e ge
 ---
 
 ## 4. Especificação OpenAPI
-A especificação OpenAPI pode ser encontrada em [. Especificação OpenAPI](/openapi.json).
+A especificação OpenAPI pode ser encontrada em [Especificação OpenAPI](./openapi_full.json).
