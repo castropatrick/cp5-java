@@ -1,4 +1,4 @@
-# CP5-Java 
+ # CP5-Java 
 
 ##  Sumario
 
@@ -15,7 +15,7 @@ Esta é a documentação oficial da API RESTful para o sistema de criação e ge
 
 ---
 
-## 🛣️ 2. Rotas da API
+## 2. Rotas da API
 
 
 | Método | Rota                     | Descrição                       | Status Codes         |
@@ -90,3 +90,29 @@ Esta é a documentação oficial da API RESTful para o sistema de criação e ge
   ],
   "dataCriacao": "2020-06-21T13:45:00Z"
 }
+```
+---
+### 🔹 CardDTO
+```json
+{
+  "id": 1,
+  "nome": "Selvala, Heart of the Wilds",
+  "tipo": "Criatura Lendária",
+  "cor": "Verde",
+  "custoMana": "1GG",
+  "descricao": "Sempre que outra criatura entra no campo de batalha sob seu controle, você pode comprar um card. {T}: Adicione uma quantidade de mana de qualquer combinação de cores igual ao maior poder entre as criaturas que você controla."
+}
+```
+
+### 🔹 UserDTO
+```json
+{
+  "id": "user_9a8b7c6d",
+  "nome": "Patrick Castro",
+  "email": "patrick.castro@example.com",
+  "dataCriacao": "2020-03-15T10:20:00Z"
+}
+```
+---
+
+## 4. Especificação OpenAPI
